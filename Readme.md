@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Кирилл Титов](https://up.htmlacademy.ru/javascript/31/user/2485355).
-* Наставник: Наставник: [Александр Сударев](https://htmlacademy.ru/profile/id1152185).
+* Наставник: [Александр Сударев](https://htmlacademy.ru/profile/id1152185).
 
 ---
 
