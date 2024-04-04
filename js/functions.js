@@ -43,3 +43,36 @@ getDigits('а я томат'); // NaN
 getDigits(2023); // 2023
 getDigits(-1); // 1
 getDigits(1.5); // 15
+
+const convertTimeToMinutes = (time) => {
+  const splittedTime = time.split(':');
+
+  return parseInt(splittedTime[0], 10) * 60 + parseInt(splittedTime[1], 10);
+};
+
+const verifyMeetingTime = (
+  workStartTime,
+  workEndTime,
+  meetingStartTime,
+  meetingDuration
+) => {
+  const startWorkTimeInMinutes = convertTimeToMinutes(workStartTime);
+  const endWorkTimeInMinutes = convertTimeToMinutes(workEndTime);
+  const startMeetingTimeInMinutes = convertTimeToMinutes(meetingStartTime);
+
+  return !(
+    startMeetingTimeInMinutes < startWorkTimeInMinutes ||
+    endWorkTimeInMinutes < startMeetingTimeInMinutes + meetingDuration
+  );
+};
+
+// eslint-disable-next-line no-console
+console.log(verifyMeetingTime('08:00', '17:30', '14:00', 90)); // true
+// eslint-disable-next-line no-console
+console.log(verifyMeetingTime('8:0', '10:0', '8:0', 120)); // true
+// eslint-disable-next-line no-console
+console.log(verifyMeetingTime('08:00', '14:30', '14:00', 90)); // false
+// eslint-disable-next-line no-console
+console.log(verifyMeetingTime('14:00', '17:30', '08:0', 90)); // false
+// eslint-disable-next-line no-console
+console.log(verifyMeetingTime('8:00', '17:30', '08:00', 900)); // false
