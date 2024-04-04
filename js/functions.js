@@ -8,7 +8,7 @@ isCorrectLength('проверяемая строка', 18); // true
 isCorrectLength('проверяемая строка', 10); // false
 
 
-function isPalindrome(str) {
+const isPalindrome = (str) => {
 
   const normalStr = str.replaceAll(' ', '').toLowerCase();
 
@@ -19,7 +19,7 @@ function isPalindrome(str) {
   }
 
   return true;
-}
+};
 
 // Строка является палиндромом
 isPalindrome('топот'); // true
@@ -31,13 +31,9 @@ isPalindrome('Кекс'); // false
 isPalindrome('Лёша на полке клопа нашёл '); // true
 
 
-function getDigits(input) {
-  const number = Number.parseInt(
-    input.toString().replace(/\D/g, ''), 10
-  );
-
-  return number;
-}
+const getDigits = (input) => Number.parseInt(
+  input.toString().replace(/\D/g, ''), 10
+);
 
 getDigits('2023 год'); // 2023
 getDigits('ECMAScript 2022'); // 2022
