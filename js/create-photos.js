@@ -3,7 +3,7 @@ import {getData} from './data.js';
 
 const {DECRIPTION_TEMPLATE, MESSAGE_TEMPLATE, NAMES} = getData();
 
-const DESCRIPTIONS_IDS_RANGE = {
+const PHOTOS_IDS_RANGE = {
   min: 1,
   max: 25
 };
@@ -33,9 +33,9 @@ const COMMENTS_COUNT = {
   max: 30
 };
 
-const DECRIPTIONS_COUNT = 25;
+const PHOTOS_COUNT = 25;
 
-const generatePhotoId = randomIdGenerator(DESCRIPTIONS_IDS_RANGE.min, DESCRIPTIONS_IDS_RANGE.max);
+const generatePhotoId = randomIdGenerator(PHOTOS_IDS_RANGE.min, PHOTOS_IDS_RANGE.max);
 const generatePhotoNumber = randomIdGenerator(PHOTOS_NUMBERS_RANGE.min, PHOTOS_NUMBERS_RANGE.max);
 const generateCommentId = randomIdGenerator(COMMENTS_IDS_RANGE.min, COMMENTS_IDS_RANGE.max);
 
@@ -54,6 +54,6 @@ const createPhoto = () => ({
   comments: Array.from({ length: getRandomInteger(COMMENTS_COUNT.min, COMMENTS_COUNT.max)}, createComment)
 });
 
-const getPhotosArray = () => Array.from({length: DECRIPTIONS_COUNT}, createPhoto);
+const getPhotosArray = () => Array.from({length: PHOTOS_COUNT}, createPhoto);
 
 export {getPhotosArray};
